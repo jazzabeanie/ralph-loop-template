@@ -3,8 +3,11 @@
 ## Initial Review
 Before beginning any work, carefully study the following files in order:
 1. **context.md** - Read the context file to understand recent changes, key components, and important decisions
-2. **spec/README.md** - Review the specification lookup table to understand all available specs and their current status
-3. **spec/[CURRENT_SPEC].md** - Read the specific specification file you have been asked to implement in its entirety
+2. **specs/README.md** - Review the specification lookup table to understand all available specs and their current status
+3. **specs/[CURRENT_SPEC].md** - Read the specific specification file you have been asked to implement in its entirety
+
+## Pre-Implementation Check
+**STOP AND FLAG** if you discover any features marked as "In Progress" that the user may have assumed to be completed. Confirm the actual status with the user before proceeding. Check the specs/README.md file for current status of all features.
 
 ## IMPORTANT: Testing Requirements
 - CREATE new tests for any new functionality you implement
@@ -21,21 +24,21 @@ Before beginning any work, carefully study the following files in order:
 ## Documentation Requirements
 
 ### Update Context File (context.md)
-- APPEND important information for future LLM model runs
+- APPEND to the Recent Changes section with important information for future LLM model runs
+- Do NOT modify existing recent changes entries - only append new ones
+- UPDATE other sections (Key Components, Important Decisions, Known Issues, Future Considerations) as needed
 - Document key decisions made during implementation
 - Note any architectural changes or important patterns used
 - Add warnings or gotchas that future developers should know
-- Do NOT modify existing recent changes entries - only append new information
-- Update other sections as needed
 
 ### Update Specification Files
-- **spec/[CURRENT_SPEC].md**: 
+- **specs/[CURRENT_SPEC].md**: 
   - Update the Progress section with detailed status of implementation
   - Mark completed items with dates
   - Note any blockers or issues encountered
   - If you discover missing or incorrect details, ADD them to the spec (don't delete existing content)
   
-- **spec/README.md**:
+- **specs/README.md**:
   - Update the status field for the current spec (Not Started → In Progress → Completed)
   - Update the Tests field (NA → Failing → Passing)
   - If you added clarifications to the spec, ensure keywords and summary are still accurate

@@ -5,11 +5,12 @@ This file provides critical context about the codebase without requiring you to 
 
 **USAGE RULES:**
 - READ this file before starting work on any spec
-- APPEND Recent Changes section with new information at the bottom (do not modify existing entries)
-- UPDATE other sections as needed
+- APPEND to the Recent Changes section with new entries (add at the top of that section, most recent first)
+- Do NOT modify or delete existing Recent Changes entries - only append new ones
+- UPDATE other sections (Key Components, Important Decisions, Known Issues, Future Considerations) as needed
 - INCLUDE dates with your entries (YYYY-MM-DD format)
 - BE CONCISE but include enough detail for future agents to understand decisions
-- MANUALLY CLEAR this file at major milestones when context is no longer relevant (human decision only)
+- This file can be MANUALLY CLEARED at major project milestones when details are no longer relevant (human decision only)
 
 **WHAT TO DOCUMENT:**
 - Important architectural decisions and why they were made

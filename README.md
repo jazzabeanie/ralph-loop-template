@@ -72,7 +72,7 @@ It should start with details about what the folder should contain. It should men
 Subsequent prompts:
 
 ```
-Please read my updated original prompt and update the files as required:
+Please read my updated original prompt below and update the files as required:
 
 PASTE ORIGINAL PROMPT FROM ABOVE
 ```

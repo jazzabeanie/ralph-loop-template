@@ -8,20 +8,20 @@ Specification files are the **"pin" that prevents context rot**. They don't tell
 
 Each spec file should:
 - Define clear, testable requirements
-- Specify API contracts and data structures
+- Specify API contracts and data structures  
 - List dependencies on other specs
 - Include a Progress section for tracking implementation status
 - Be updated if implementation reveals missing or incorrect details
 
 **For AI Agents:**
-Use this README as your lookup table. Search for keywords related to the feature you're implementing, then navigate to the specific spec file using the provided link. Read the entire spec before beginning implementation.
+This README acts as a **lookup table** for AI search tools. Use the generative keywords to find relevant specs, then navigate to the specific .md file using the provided link. The one-sentence summary helps you quickly determine if you're looking at the right specification before committing to read the entire document. Always read the complete spec file before beginning implementation.
 
 ---
 
 ## Specification Index
 
 ### 1. User Authentication System
-**File:** [example-user-authentication.md](specs/example-user-authentication.md)
+**File:** [example-user-authentication.md](example-user-authentication.md)
 
 **Keywords:** user authentication, login, registration, signup, JWT, JSON Web Token, session management, password hashing, bcrypt, security, auth middleware, identity management, user credentials, bearer token, protected routes
 
