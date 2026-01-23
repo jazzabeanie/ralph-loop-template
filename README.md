@@ -16,6 +16,8 @@ and as [Matt Pocock does](https://youtu.be/_IK18goX4X8?si=u4Pu-jcqrjBKKNEc&t=678
 tool and do all testing as human user would". This is more important once the
 ralph loop is implemented.
 - Implement the ralph loop with a human in the loop.
+- read [more about ralph loops](https://github.com/JeredBlu/guides/blob/main/Ralph_Wiggum_Guide.md)
+- read [more from Matt Pocock](https://www.aihero.dev/tips-for-ai-coding-with-ralph-wiggum)
 
 ## ./ralph
 
