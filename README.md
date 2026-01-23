@@ -34,6 +34,9 @@ by [Matt Pocock at 9:51](https://youtu.be/_IK18goX4X8?si=kOT9wDLQMldcxsya&t=591)
 Below is the prompt used to generate the files in the `./ralph` folder.
 
 ```
+Please assist me in creating files to get started with a ralph wiggum loop.
+Create the following files and folders in the ./ralph folder:
+
 ## Prompt file
 Please create a prompt file with placeholder text. It should start with intructions to study the spec/README.txt, the context file, and the spec/__ (whatever sepecification we are trying to implement). Then it should contain an "IMPORTANT" section that says to create new test and to run any relevant tests. It should have instructions to implement the feature detailed in the specs file starting with the the part that makes the other parts easier or quicker. It should have instructions to update the context file with any instructions to future LLM model runs. It should have instructions to update the specs file and specs readme file (in the section of the relevant specs file) if any details are missing or incorrect. It should have instructions to update the specs file in the progress section with the details of the progress on implementing the current spec.
 
@@ -62,6 +65,5 @@ It should start with details about what the folder should contain. It should men
 - Status: Whether the specification has been implemented or not, or is in progress.
 - Tests: passing, failing, or NA if there are no relevant tests.
 - Dependencies: Include a brief mention of dependencies (e.g., "Requires Spec X to be implemented first"), though the primary goal is to keep it a clean "lookup table".
-
 ```
 
