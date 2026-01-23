@@ -29,7 +29,9 @@ prompt to create a commit. Also, it will require setting up the loop that calls
 the cli agent tool. Also, It would be good to set up an early exit as specified
 by [Matt Pocock at 9:51](https://youtu.be/_IK18goX4X8?si=kOT9wDLQMldcxsya&t=591).
 
-## Prompt
+## Prompts
+
+### Ralph loop setup prompt
 
 Below is the prompt used to generate the files in the `./ralph` folder.
 
@@ -38,10 +40,10 @@ Please assist me in creating files to get started with a ralph wiggum loop.
 Create the following files and folders in the ./ralph folder:
 
 ## Prompt file
-Please create a prompt file with placeholder text. It should start with intructions to study the spec/README.txt, the context file, and the spec/__ (whatever sepecification we are trying to implement). Then it should contain an "IMPORTANT" section that says to create new test and to run any relevant tests. It should have instructions to implement the feature detailed in the specs file starting with the the part that makes the other parts easier or quicker. It should have instructions to update the context file with any instructions to future LLM model runs. It should have instructions to update the specs file and specs readme file (in the section of the relevant specs file) if any details are missing or incorrect. It should have instructions to update the specs file in the progress section with the details of the progress on implementing the current spec.
+Please create a prompt file with placeholder text. It should start with intructions to study the context file, the spec/README.txt, and the spec/__ (whatever sepecification we are trying to implement). It should include instructions to stop and flag with the user if it find any features that are currently in progress which the user may have assumed to be completed. Then it should contain an "IMPORTANT" section that says to create new test and to run any relevant tests. It should have instructions to implement the feature detailed in the specs file starting with the the part that makes the other parts easier or quicker. It should have instructions to update the context file with any instructions to future LLM model runs. It should have instructions to update the specs file and specs readme file (in the section of the relevant specs file) if any details are missing or incorrect. It should have instructions to update the specs file in the progress section with the details of the progress on implementing the current spec.
 
 ## Context file
-Please create a context file. The purpose of this file is so that AI can read it and get an understanding of important parts of the code that are relevant to the current spec without having to read the whole code base. At the top leave instructions to the AI for how to use it, and include instructions that the details can be cleared out manually at clear completion points in the development cycle. The AI should append to the file only, not change old entries. The AI should append to this file with important information and summaries to future people or AI agents that work on this code. It should include sections for:
+Please create a context file. The purpose of this file is so that AI can read it and get an understanding of important parts of the code that are relevant to the current spec without having to read the whole code base. At the top leave instructions to the AI for how to use it, and include instructions that the details can be cleared out manually at clear completion points in the development cycle. The AI should append to the file in the recent changes section, not change old entries. The AI should append to this file with important information and summaries to future people or AI agents that work on this code. Other sections can be updated as required. It should include sections for:
 
 - Recent Changes: A log of recent changes made to the codebase with dates and brief descriptions.
 - Key Components: Summaries of key components or modules in the codebase, explaining their purpose
@@ -67,3 +69,16 @@ It should start with details about what the folder should contain. It should men
 - Dependencies: Include a brief mention of dependencies (e.g., "Requires Spec X to be implemented first"), though the primary goal is to keep it a clean "lookup table".
 ```
 
+Subsequent prompts:
+
+```
+Please read my updated original prompt and update the files as required:
+
+PASTE ORIGINAL PROMPT FROM ABOVE
+```
+
+##  generation prompt
+
+```
+I want to __. Please read the ./ralph/specs/README.md file, and any other individual specs files you deem helpful, with the goal of creating a spec file for the feature. Discuss with me to get an understanding before I give permission to generate the spec file.
+```
