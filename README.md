@@ -74,7 +74,7 @@ It should start with details about what the folder should contain. It should men
 Subsequent prompts:
 
 ```
-Please read my updated original prompt below and update the files as required:
+Please make minimal updates to the original prompt below and files as required to achieve the goals:
 
 PASTE ORIGINAL PROMPT FROM ABOVE
 ```
