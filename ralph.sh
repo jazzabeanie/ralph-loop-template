@@ -1,6 +1,6 @@
 #!/bin/bash
 # Ralph Wiggum - Long-running AI agent loop
-# Usage: ./ralph.sh [--tool amp|claude|gemini] [max_iterations]
+# Usage: ./ralph.sh [--tool amp|claude] [max_iterations]
 
 set -e
 
@@ -34,7 +34,7 @@ if [[ "$TOOL" != "amp" && "$TOOL" != "claude" && "$TOOL" != "gemini" ]]; then
   exit 1
 fi
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PRD_DIR="$SCRIPT_DIR/specs"
+PROJECT_ROOT="$(git rev-parse --show-toplevel)"
 CONTEXT_FILE="$SCRIPT_DIR/context.md"
 
 # TODO: consider implementing a separate branch per spec file as he does in https://github.com/snarktank/ralph/blob/main/ralph.sh
@@ -56,7 +56,9 @@ for i in $(seq 1 $MAX_ITERATIONS); do
 
   # Run the selected tool with the ralph prompt
   # Prompt now consists of prompt.txt + context.md + all .md files in the specs directory
-  FULL_PROMPT=$(cat "$SCRIPT_DIR/prompt.txt" "$CONTEXT_FILE" "$PRD_DIR"/*.md 2>/dev/null)
+  FULL_PROMPT="Project root: $PROJECT_ROOT
+
+$(cat "$SCRIPT_DIR/prompt.txt" 2>/dev/null)"
   
   if [[ "$TOOL" == "amp" ]]; then
     OUTPUT=$(echo "$FULL_PROMPT" | amp --dangerously-allow-all 2>&1 | tee /dev/stderr) || true
