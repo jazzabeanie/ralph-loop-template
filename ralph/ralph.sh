@@ -28,7 +28,7 @@ EOF
 }
 
 # Parse arguments
-TOOL="gemini"  # Default to amp for backwards compatibility
+TOOL="claude"
 MAX_ITERATIONS=5
 PREPEND_TEXT=""
 
