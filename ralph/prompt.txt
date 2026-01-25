@@ -20,7 +20,7 @@ Before beginning any work, carefully study the following files in order:
 2. **Start with Foundation**: Implement the part of the feature that makes other parts easier or quicker to build
 3. **Build Incrementally**: Work through the specification systematically, testing as you go
 4. **Verify Completeness**: Ensure all requirements in the spec are fully implemented
-5. **Confirm completion**: When all specs are completed and all tests pass, output `<promise>COMPLETE</promise>` to signal completion.
+5. **Confirm completion** (IMPORTANT): When implementation is finished and all tests pass, output `<promise>COMPLETE</promise>` to signal completion.
 
 ## Documentation Requirements
 
