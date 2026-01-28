@@ -83,6 +83,8 @@ fi
 
 echo "Starting Ralph - Tool: $TOOL - Max iterations: $MAX_ITERATIONS"
 
+PREVIOUS_COMPLETE=false
+
 for i in $(seq 1 $MAX_ITERATIONS); do
   echo ""
   echo "==============================================================="
@@ -100,6 +102,16 @@ for i in $(seq 1 $MAX_ITERATIONS); do
   FULL_PROMPT="${FULL_PROMPT}Project root: $PROJECT_ROOT
 
 $(cat "$SCRIPT_DIR/prompt.txt" 2>/dev/null)"
+
+  # Only add VERIFICATION REQUIREMENT if previous iteration found COMPLETE
+  if [[ "$PREVIOUS_COMPLETE" == "true" ]]; then
+    FULL_PROMPT="${FULL_PROMPT}
+
+---
+
+VERIFICATION REQUIREMENT:
+Currently the phase of work is to very that the existing implementation was done properly. Verify that the specification has been fully and correctly implemented. Review the spec files in the specs/ directory against the actual implementation. Only if the spec has been properly implemented should you add <promise>VERIFIED</promise> to the end of your output."
+  fi
   
   if [[ "$TOOL" == "amp" ]]; then
     OUTPUT=$(echo "$FULL_PROMPT" | amp --dangerously-allow-all 2>&1 | tee /dev/stderr) || true
@@ -110,12 +122,17 @@ $(cat "$SCRIPT_DIR/prompt.txt" 2>/dev/null)"
     OUTPUT=$(echo "$FULL_PROMPT" | claude --dangerously-skip-permissions --print 2>&1 | tee /dev/stderr) || true
   fi
   
-  # Check for completion signal
-  if echo "$OUTPUT" | grep -q "<promise>COMPLETE</promise>"; then
+  # Check for verified signal - if spec is verified, we're done
+  if echo "$OUTPUT" | grep -q "<promise>VERIFIED</promise>"; then
     echo ""
-    echo "Ralph completed all tasks!"
-    echo "Completed at iteration $i of $MAX_ITERATIONS"
+    echo "Ralph verified the spec implementation!"
+    echo "Verified at iteration $i of $MAX_ITERATIONS"
     exit 0
+  fi
+  
+  # Check for completion signal - if tasks are complete, next iteration will require verification
+  if echo "$OUTPUT" | grep -q "<promise>COMPLETE</promise>"; then
+    PREVIOUS_COMPLETE=true
   fi
   
   echo "Iteration $i complete. Continuing..."
