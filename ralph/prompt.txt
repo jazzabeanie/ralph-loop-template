@@ -44,6 +44,9 @@ Before beginning any work, carefully study the following files in order:
   - Update the Tests field (NA → Failing → Passing)
   - If you added clarifications to the spec, ensure keywords and summary are still accurate
 
+### Update Code Documentation
+- Review the README.md file in the root of the project to ensure it reflects the current state of the project.
+
 ## Quality Checklist
 Before completing your work, verify:
 - [ ] All spec requirements are implemented
