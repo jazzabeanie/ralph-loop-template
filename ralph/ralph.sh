@@ -13,6 +13,7 @@ Usage: ./ralph.sh [OPTIONS] [max_iterations]
 Options:
   --tool <name>       AI tool to use: amp, claude, or gemini (default: gemini)
   --prepend <text>    Custom text to prepend to the prompt
+  --sleep             Sleep 5 hours between iterations
   -h, --help          Show this help message and exit
 
 Arguments:
@@ -23,6 +24,7 @@ Examples:
   ./ralph.sh 10                           # Run 10 iterations
   ./ralph.sh --tool claude 3              # Use claude for 3 iterations
   ./ralph.sh --prepend "Focus on tests"   # Prepend custom instruction to prompt
+  ./ralph.sh --sleep 10                   # Sleep 5 hours between iterations, run 10 times
 EOF
   exit 0
 }
@@ -31,6 +33,7 @@ EOF
 TOOL="claude"
 MAX_ITERATIONS=5
 PREPEND_TEXT=""
+SLEEP_ENABLED=false
 
 while [[ $# -gt 0 ]]; do
   case $1 in
@@ -51,6 +54,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --prepend=*)
       PREPEND_TEXT="${1#*=}"
+      shift
+      ;;
+    --sleep)
+      SLEEP_ENABLED=true
       shift
       ;;
     *)
@@ -136,7 +143,14 @@ Currently the phase of work is to very that the existing implementation was done
   fi
   
   echo "Iteration $i complete. Continuing..."
-  sleep 2
+  if [[ $i -lt $MAX_ITERATIONS ]]; then
+    if [[ "$SLEEP_ENABLED" == "true" ]]; then
+      echo "Sleeping for 5 hours before next iteration..."
+      sleep $((5 * 60 * 60))
+    else
+      sleep 2
+    fi
+  fi
 done
 
 echo ""
