@@ -74,7 +74,8 @@ It should start with details about what the folder should contain. It should men
 Subsequent prompts:
 
 ```
-Please make minimal updates to the original prompt below and files as required to achieve the goals:
+Please make minimal updates to the original prompt below and files as required
+to achieve the goals:
 
 PASTE ORIGINAL PROMPT FROM ABOVE
 ```
@@ -82,5 +83,8 @@ PASTE ORIGINAL PROMPT FROM ABOVE
 ##  generation prompt
 
 ```
-I want to __. Please read the ./ralph/specs/README.md file, and any other individual specs files you deem helpful, with the goal of creating a spec file for the feature. Discuss with me to get an understanding before I give permission to generate the spec file.
+I want to __. Please read the ./ralph/specs/README.md file, and any other
+individual specs files you deem helpful, with the goal of creating a spec file
+for the feature. Discuss with me to get an understanding before I give
+permission to generate the spec file.
 ```
