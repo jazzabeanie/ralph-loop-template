@@ -2,6 +2,8 @@
 
 Your task is to work on a spec detail in the ./ralph/spec folder. Choose the most import spec to work on, and one that will make implementing future specs easier. If possible, write tests and confirm that they fail before implementing the feature.
 
+Note that the virtual environment for this project is conda, which has been created in the conda-env folder.
+
 ## Initial Review
 Before beginning any work, carefully study the following files in order:
 1. **context.md** - Read the context file to understand recent changes, key components, and important decisions
