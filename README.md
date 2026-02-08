@@ -83,8 +83,5 @@ PASTE ORIGINAL PROMPT FROM ABOVE
 ##  generation prompt
 
 ```
-I want to __. Please read the ./ralph/specs/README.md file, and any other
-individual specs files you deem helpful, with the goal of creating a spec file
-for the feature. Discuss with me to get an understanding before I give
-permission to generate the spec file.
+I want to __. Please read the ./ralph/specs/README.md file, and any other individual specs files you deem helpful, with the goal of creating a spec file for the feature. Discuss with me to get an understanding before I give permission to generate the spec file.
 ```
