@@ -127,7 +127,7 @@ Currently the phase of work is to very that the existing implementation was done
     # OUTPUT=$(echo "$FULL_PROMPT" | gemini --model gemini-3-flash-preview --yolo 2>&1 | tee /dev/stderr) || true
   else
     # Claude Code: use --dangerously-skip-permissions for autonomous operation, --print for output
-    OUTPUT=$(echo "$FULL_PROMPT" | claude --dangerously-skip-permissions --print 2>&1 | tee /dev/stderr) || true
+    OUTPUT=$(echo "$FULL_PROMPT" | claude --dangerously-skip-permissions --print 2>&1 | tee /dev/stdout) || true
   fi
   
   # Check for verified signal - if spec is verified, we're done
