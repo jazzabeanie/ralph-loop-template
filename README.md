@@ -1,6 +1,6 @@
 # Ralph Loop Template
 
-This container my template files for ralph loops.
+This contains my template files for ralph loops.
 
 Created from information in:
 
